@@ -36,10 +36,13 @@ header {
     left: 0;
     width: 100%;
     height: 100%;
+    z-index: 101
 }
 
 .popup-content {
     position: absolute;
+    max-height: 80vh; 
+    overflow-y: auto;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -489,7 +492,6 @@ h2 {
 
 /* Gallery styles */
 .lockedGallery {
-    width: 100vw;
     max-width: 1420px;
     margin:auto;
 }
@@ -501,6 +503,7 @@ h2 {
 
 /* Footer styles */
 footer {
+    position: relative; 
     background-color: #EBC392;
     text-align: center;
     display: flex;
@@ -1010,5 +1013,10 @@ footer {
 
     .special-explanations li {
         max-width: 40%;
+    }
+}
+@media screen and (max-width: 768px) {
+    .popup-content {
+        padding: 10px;
     }
 }
