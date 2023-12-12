@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&family=Moo+Lah+Lah&display=swap');
+@mixin leftPos($count){
+  @for $i from 1 through $count {
+      &:nth-child(#{$i}) {
+  		left:((($i)-2)*5)-1%;
+	  }
+  }
+}
+/////////////////////////////////////
+body{
+  background:#FDFCE8;
+  color:#FFF;
+  margin: auto;
+  font-family: 'Comfortaa', sans-serif;
+  text-align:center;
+  max-width: 100vw;
+  letter-spacing:0.08em;
+
+  
+  }
+b{
+  font-size:28px;
+  color:#FFF;
+}
+.container{
+  width:100%;
+  height:100vh;
+  margin:0px auto;
+  background:#EBC392;
+  overflow:hidden; 
+  position:relative;
+}
+.text{
+  position:absolute;
+  left:50%;
+  top:45%;
+  transform:translate(-50%,-50%);
+  text-align:center;
+  color:#EBC392;
+  font-size:4rem;
+  font-weight:900;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .mooSVG{
+    width: 200px;
+    height: 20vh;
+  }
+  }
+
+  
+.liquid{
+  width:120%;
+  height:4vh;
+  position:absolute;
+  top:0%;
+  left:-10%;
+  background:#FDFCE8;
+  border-radius:10%;
+  animation-name: liquid;
+  animation-duration: 4s;
+  animation-timing-function: ease;
+  animation-delay: 0s;
+  animation-iteration-count: 1; /* Modifier à 1 pour jouer l'animation une seule fois */
+  animation-direction: normal;
+  animation-fill-mode: forwards; /* Garder les styles de la fin de l'animation */
+  animation-play-state: running;
+}
+
+.blobs{
+  filter:url('#goo');
+  width:100%;
+  height:100%;
+  position:relative;
+  
+  .blob {
+    width: 2vw;
+    height: 2vh;
+    margin: 0px 5px 0px 0px;
+    background: #FFF;
+    border-radius: 50%;
+    position: absolute;
+    top: -3px;
+    @include leftPos(24);
+    animation: drip_one 4s infinite;
+    background-color: #FDFCE8;
+    z-index: 10;
+  
+    &:nth-of-type(4n-7) {
+      width: 10px;
+      animation: drip_four 4s infinite;
+    }
+  
+    &:nth-of-type(3n-2) {
+      width: 3vw;
+    }
+  
+    &:nth-of-type(2) {
+      width: 8vw;
+    }
+  
+    &:nth-of-type(8) {
+      animation: drip_five 4s infinite;
+    }
+  
+    &:nth-of-type(4n+2) {
+      height: 7vh;
+      animation: drip_two 4s infinite;
+    }
+  
+    &:nth-of-type(6n-2) {
+      height: 3vh;
+      animation: drip_three 4s infinite;
+    }
+  } 
+       
+}
+
+.skip-button {
+  padding: 10px 20px;
+  background-color: #EBC392;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background-color 0.3s;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #231F13;
+    color: #FFF;
+  }
+}
+
+
+@keyframes drip_one{
+  from{top:0;}
+  to{top:103%;}
+  }  
+@keyframes drip_two{
+  from{top:0;}
+  to{top:104%;}
+  }
+@keyframes drip_three{
+  from{top:0;height:52px;}
+  to{top:102%;height:132px;}
+  } 
+@keyframes drip_four{
+  from{top:0;width:65px;height:30px;}
+  to{top:102%;width:75px;height:80px;}
+  } 
+@keyframes drip_five{
+  from{top:0;height:30px;}
+  to{top:102%;height:72px;}
+  } 
+@keyframes liquid{
+  from{height:15px;}
+  to{height:109%;}
+  }
+
+  @media (max-width: 480px) {
+    .text{
+      font-size:2.5rem;
+    }
+  }    

@@ -2,6 +2,7 @@
 body, ul {
     margin: 0;
     padding: 0;
+
 }
 
 /* Global styles */
@@ -26,67 +27,6 @@ header {
     max-width: 70%;
     max-height: 100px;
     object-fit: cover;
-}
-
-/* Style de la popup */
-.popup {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 101
-}
-
-.popup-content {
-    position: absolute;
-    max-height: 80vh; 
-    overflow-y: auto;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: #EBC392;
-    padding: 20px;
-    text-align: center;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-}
-
-.close-btn {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 20px;
-    cursor: pointer;
-}
-
-.quest-link {
-    display: inline-block;
-    margin-top: 10px;
-    padding: 8px 16px;
-    background-color: #3498db;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 4px;
-}
-
-.discord-icon {
-    cursor: pointer;
-}
-
-.close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-  }
-  
-.close:hover,
-.close:focus {
-color: black;
-text-decoration: none;
-cursor: pointer;
 }
 
 /*
@@ -239,7 +179,7 @@ li.active {
 
 .btn {
     text-decoration: none;
-    padding: 1.4em;
+    padding: 0.8em;
     font-size: 1.2em;
     color: #FFFFFF;
     background-color: #000000;
@@ -248,13 +188,13 @@ li.active {
     
     
 .btn:hover {
-    padding: 1.4em;
     color: #231F13;
     background-color: #EBC392;
 } 
 
 /* Home section styles */
-#home, #brand, #collectibles, #faq-section {
+#home, #brand, #collectibles, #faq-section, #onboard {
+    padding: 40px;
     text-align: center;
     background-color: #FDFCE8;
 }
@@ -263,7 +203,7 @@ li.active {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-bottom: 6vh;
+    padding-bottom: 12vh;
     padding-top: 100px;
 }
 
@@ -313,6 +253,11 @@ h2 {
 
 .left-content {
     width: 50%;
+}
+
+.right-content {
+    text-align: center;
+    margin: auto;
 }
 
 .content-image-left img {
@@ -388,6 +333,10 @@ h2 {
     color: #231F13;
 }
 
+.disclaimer {
+    font-size: 13px;
+}
+
 .base-explanations, .special-explanations {
     display: flex;
     flex-direction: row;
@@ -424,7 +373,7 @@ h2 {
 .special-explanations li {
     list-style-type: none;
     margin: 3px;
-    max-width: 23%;
+    max-width: 18%;
 }
 
 
@@ -491,19 +440,52 @@ h2 {
   }
 
 /* Gallery styles */
-.lockedGallery {
-    max-width: 1420px;
-    margin:auto;
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 2px;
 }
 
-.lockedGallery img {
+.gallery img {
     width: 100%;
+    border-radius: 7%;
+}
 
+/* Discord warning */
+.discord-icon {
+    cursor: pointer;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.quest-link {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 16px;
+    background-color: #3498db;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+#discord-modal {
+    text-align: center;
 }
 
 /* Footer styles */
 footer {
-    position: relative; 
     background-color: #EBC392;
     text-align: center;
     display: flex;
@@ -785,6 +767,29 @@ footer {
   }
 }
 
+/* MtPelerin style */
+
+.mtpelerin-iframe {
+    overflow-y: hidden; 
+}
+
+.ramp-widget {
+    width: 350px;
+    height: 530px;
+}
+
+@media (min-width: 768px) {
+    .ramp-widget {
+        width: 400px;
+    }
+}
+
+@media (min-width: 1025px) {
+    .ramp-widget {
+        width: 500px;
+    }
+}
+
 
 /* Responsive styles */
 @media screen and (max-width: 768px) {
@@ -980,7 +985,7 @@ footer {
     .faq-container {
     width: 80%;
     min-width: 80%;
-
+    text-align: left;
     }
 
 }
@@ -999,7 +1004,7 @@ footer {
         font-size: 2.5rem;
     }
 
-    #home, #brand, #collectibles, #faq-section {
+    #home, #brand, #collectibles, #faq-section, #onboard {
         padding: 40px 25px;
     }
 
@@ -1012,11 +1017,6 @@ footer {
     }
 
     .special-explanations li {
-        max-width: 40%;
-    }
-}
-@media screen and (max-width: 768px) {
-    .popup-content {
-        padding: 10px;
+        max-width: 30%;
     }
 }
