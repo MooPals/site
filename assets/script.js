@@ -2,7 +2,6 @@
 const navLinks = document.querySelector('.nav-links');
 const termsButton = document.getElementById('terms-button');
 const termsModal = document.getElementById('terms-modal');
-const discordModal = document.getElementById('discord-modal');
 
 
 // Ajoutez un gestionnaire d'événements pour ouvrir la modale des Termes et Conditions
@@ -14,13 +13,6 @@ termsButton.addEventListener('click', () => {
 termsModal.addEventListener('click', (event) => {
     if (event.target === termsModal) {
         termsModal.style.display = 'none';
-    }
-});
-
-// Ajoutez un gestionnaire d'événements pour fermer la modale Discord
-discordModal.addEventListener('click', (event) => {
-    if (event.target === discordModal) {
-        discordModal.style.display = 'none';
     }
 });
 
@@ -110,22 +102,3 @@ faqItems.forEach(item => {
     }
   });
 });
-
-function showDiscordMessage() {
-    // Contenu du message
-    const message = "🚧 Our Discord is in restricted access! Follow us on X and activate notifications to be sure not to miss the next opportunity to be part of our Discord!";
-  
-    // Affichage du message
-    alert(message);
-  }
-
-  function showDiscordPopup() {
-    // Affichage de la fenêtre modale
-    document.getElementById('discord-modal').style.display = 'block';
-  }
-  
-  function closeDiscordPopup() {
-    // Fermeture de la fenêtre modale
-    document.getElementById('discord-modal').style.display = 'none';
-  }
-
