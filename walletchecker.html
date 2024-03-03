@@ -8,15 +8,15 @@
     <meta name="keywords" content="Collectibles, Dynamic, DNFT, DNFTs, Dynamic NFTS, NFTS, NFT, Moo, Caw NFT, MooPals, MooPals collectibles, Avalanche, AVAX, blockchain">
     <meta name="author" content="MooPals team">
     <meta property="og:title" content="MooPals Collectibles">
-    <meta property="og:description" content="MooPals are universally loved cows that bring kindness and joy to the digital and physical world.">
-    <meta property="og:image" content="www.moopals.com/MooPalsNoBG.webp">
+    <meta property="og:description" content="MooPals are universally loved cows that bring fun and positive spirits to the Avalanche C-Chain.">
+    <meta property="og:image" content="https://www.moopals.com/website-card.png">
     <meta property="og:url" content="www.moopals.com">
     <meta property="og:type" content="website">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:site" content="@MooPalsNFT">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@Moo_Pals">
     <meta name="twitter:title" content="MooPals Collectibles">
-    <meta name="twitter:description" content="MooPals are universally loved cows that bring kindness and joy to the digital and physical world.">
-    <meta name="twitter:image" content="www.moopals.com/MooPalsNoBG.webp">
+    <meta name="twitter:description" content="MooPals are universally loved cows that bring fun and positive spirits to the Avalanche C-Chain.">
+    <meta name="twitter:image" content="https://www.moopals.com/website-card.png">
     <link rel="icon" type="image/x-icon" href="assets/favicon.png">
     <link rel="stylesheet" href="assets/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -25,6 +25,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
     integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
     crossorigin="anonymous" referrerpolicy="no-referrer">    
+        <!-- Lien vers Axios CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <!-- Lien vers l'API Google Sheets CDN -->
+    <script src="https://apis.google.com/js/api.js"></script>
 </head>
 <body>
     <header>
@@ -48,39 +52,32 @@
             </ul>
           </section>
     </header>
-    <section id="onboard">
-        <div class="onepage">
-            <div class="title fade-in">
-                <h1>HOW TO GET $AVAX?</h1>
-            </div>
-            <div class="content-flex-row fade-in">
-                <div class="left-content">            
-                    <div class="content-image-left">
-                        <h2>New to blockchain? How to buy $AVAX with FIAT</h2>
-                        <p class="content-text-left">While we do not offer such services, we recommend reputable web3 platforms like MtPelerin. These platforms facilitate cryptocurrency acquisition without mandatory KYC procedures, implementing a 7-day cool-down period on initial transactions and waiving fees for the first €500.</p>
-                        <h2>New to Avalanche? How to get $AVAX</h2>
-                        <p class="content-text-left">
-                            While we do not provide bridging services, we recommend trusted platforms like MtPelerin for seamless asset transfers across different blockchain networks. Utilize their reliable bridging services by clicking the swap button on the right, allowing you to navigate various blockchain ecosystems securely and efficiently.
-                        </p>
-                        <div class="nft-card-background fade-in active disclaimer">
-                            <p class="content-text-left">
-                                <i class="fa-solid fa-triangle-exclamation"></i><i class="fa-solid fa-triangle-exclamation"></i><i class="fa-solid fa-triangle-exclamation"></i><h2>Disclaimer</h2>
-                            </p>
-                                <p class="content-text-left">
-                                Cryptocurrency investments and the use of bridging services involve inherent risks. Whether acquiring cryptocurrencies or utilizing bridging services like MtPelerin, users should be aware of potential technical, regulatory, and security challenges. The value of assets can be volatile, leading to potential losses or delays in transactions. It is crucial for users to understand the associated risks, conduct thorough research, and comply with applicable laws. This disclaimer does not constitute financial advice, and users are encouraged to exercise caution, seek professional advice, and use services responsibly.
-                                </p>
-                        </div>
-                    </div>
+    <section id="collectibles">
+        <div class="onepage fade-in">
+            <div class="title">
+                <h1>WALLET CHECKER</h1>
+                <label for="walletAddress">Enter your wallet address:</label>
+                <div class="walletChecker">
+
+                <input type="text" id="walletAddress" name="walletAddress">
+                <button class="btn elibilitySearch" onclick="checkEligibility()"><i class="fa-solid fa-magnifying-glass"></i></button>
                 </div>
-                <div class="right-content fade-in active">
-                    <div class="mtpelerin-iframe">
-                        <iframe allow="usb; ethereum; clipboard-write" loading="lazy" src="https://widget.mtpelerin.com/?type=web&lang=en&tabs=buy,sell,swap&bsc=EUR&bdc=AVAX&net=avalanche_mainnet&primary=%23EBC392&success=%23EBC392&_ctkn=2758dce4-3975-4402-9b39-f071a20fe299" frameBorder="no" class="ramp-widget"></iframe>
+                <div id="result-container">
+                    <div id="og-result" class="hidden">
+                        <p>Congratulations! You are on MooOGList. 🐮</p>
+                    </div>
+                    <div id="wl-result" class="hidden">
+                        <p>Congratulations! You are on MooList. 🐮</p>
+                    </div>
+                    <div id="none-result" class="hidden">
+                        <p>Sorry, you are not eligible.</p>
+                        <p>Please open a ticket on our Discord server if you think there is a moostake.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
+    
     <footer>
         <div class="svg-background">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1439 320">
@@ -112,5 +109,7 @@
     </div>
 
     <script src="assets/script.js"></script>
+    <script src="https://apis.google.com/js/api.js"></script>
+    <script src="assets/checkwallet.js"></script>
 </body>
 </html>
