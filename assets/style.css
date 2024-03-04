@@ -178,9 +178,17 @@ li.active {
 .walletChecker {
     display: flex;
     flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.walletCheckerTool {
+    display: flex;
+    flex-direction: column;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
+    min-width: 400px;
 }
 
 #walletAddress {
@@ -188,7 +196,7 @@ li.active {
     padding: 0.8em;
     font-size: 1em;
     border: 1px solid #000000;
-    border-radius: 8px;
+    border-radius: 8px 0px 0px 8px;
     box-sizing: border-box; /* Assure que le padding ne modifie pas la largeur totale */
     text-align: center;
     max-width: 400px;
@@ -217,6 +225,65 @@ li.active {
     color: #231F13;
 }
 
+.mintStep {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
+    border-radius: 5px;
+    border:#EBC392 2px solid;
+    background-color: #EBC392;
+}
+
+.mintAllInfo{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.mintCalendar{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 5px;
+    width: 35%;
+}
+
+.mintHeader {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.OGNotEligible, .WLNotEligible {
+    color: darkred;
+    margin: 0px;
+}
+
+.OGEligible, .WLEligible, .PublicEligible {
+    color: darkgreen;
+    margin: 0px;
+}
+
+.checkred {
+    background-color: pink;
+    border: darkred 2px solid;
+    box-shadow: 0 0 5px 0 darkred;
+}
+
+.checkgreen {
+    background-color: #84d697;
+    border: darkgreen 2px solid;
+    box-shadow: 0 0 5px 0 darkgreen;
+}
+
+.eligibilityStatus {
+    margin: -5px;
+}
+
+
 .btn {
     text-decoration: none;
     padding: 0.5em;
@@ -234,13 +301,19 @@ li.active {
 
 .elibilitySearch {
     width: 60px;
+    padding: 0.8em;
+    border-radius: 0px 60px 60px 0px;
+    position: relative;
+    right: 0px;
+    top: 0;
 }
 
 /* Home section styles */
-#home, #brand, #collectibles, #faq-section, #onboard {
+#home, #brand, #collectibles, #faq-section, #onboard, #mint {
     padding: 40px;
     text-align: center;
     background-color: #FDFCE8;
+    min-height: 80vh;
 }
 
 .intro {
@@ -887,6 +960,12 @@ footer {
 }
 /* Responsive styles */
 @media screen and (max-width: 768px) {
+
+
+    .mintCalendar{
+        width: 80%;
+    
+    }
     .nav-links {
         display: none;
         flex-direction: column;
@@ -1052,7 +1131,7 @@ footer {
         font-size: 2.5rem;
     }
 
-    #home, #brand, #collectibles, #faq-section, #onboard {
+    #home, #brand, #collectibles, #faq-section, #onboard, #mint {
         padding: 40px 25px;
     }
 
