@@ -14,11 +14,19 @@ function checkEligibility() {
     document.getElementById("OGStep").classList.remove("checkred");
     document.getElementById("PublicStep").classList.remove("checkgreen");
 
+    
+
     const walletAddress = document.getElementById('walletAddress').value.toLowerCase(); // Convertir en minuscules
     const spreadsheetId = '1h-aQ8jzjIaB5VqaWwJhTmpoCkgsS8_WDH6nk20xFqEw';
     const rangeWL = 'Wallets!A:A';
     const rangeOG = 'OG!A:A';
     const apiKey = "AIzaSyB0yfQGJoAFY0YU89LHp16X5Ki8UBPoXcE";
+
+    // Vérification de la longueur et du préfixe de l'adresse du portefeuille
+    if (walletAddress.length !== 42 || !walletAddress.startsWith('0x')) {
+        alert("The wallet has not a valid wallet address");
+        return; // Arrête l'exécution de la fonction si l'adresse n'est pas valide
+    }
 
     // Requête pour vérifier si le portefeuille est dans la liste OG
     axios.get(`https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}/values/${rangeOG}`, {
