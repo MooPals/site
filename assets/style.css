@@ -204,13 +204,13 @@ li.active {
 
 #wl-result,
 #og-result,
-#none-result {
+#none-result, #Freemint {
     padding: 5px;
     border-radius: 8px;
     margin-top: 10px;
 }
 
-#wl-result {
+#wl-result, #Freemint {
     background-color: #84d697;
     color: #231F13;
 }

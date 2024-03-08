@@ -13,6 +13,7 @@ function checkEligibility() {
     document.getElementById("OGStep").classList.remove("checkgreen");
     document.getElementById("OGStep").classList.remove("checkred");
     document.getElementById("PublicStep").classList.remove("checkgreen");
+    document.getElementById("Freemint").classList.add("hidden");
 
     
 
@@ -20,6 +21,7 @@ function checkEligibility() {
     const spreadsheetId = '1h-aQ8jzjIaB5VqaWwJhTmpoCkgsS8_WDH6nk20xFqEw';
     const rangeWL = 'Wallets!A:A';
     const rangeOG = 'OG!A:A';
+    const rangeFreemint = 'Freemint!A:A';
     const apiKey = "AIzaSyB0yfQGJoAFY0YU89LHp16X5Ki8UBPoXcE";
 
     // Vérification de la longueur et du préfixe de l'adresse du portefeuille
@@ -27,6 +29,18 @@ function checkEligibility() {
         alert("The wallet has not a valid wallet address");
         return; // Arrête l'exécution de la fonction si l'adresse n'est pas valide
     }
+
+    // Requête pour vérifier si le portefeuille est dans la liste freemint
+    axios.get(`https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}/values/${rangeFreemint}`, {
+        params: { key: apiKey }
+    })
+    .then(function(response) {
+        const wallets = response.data.values.flat().map(wallet => wallet.toLowerCase()); // Convertir chaque portefeuille en minuscules
+        if (wallets.includes(walletAddress)) {
+            // Afficher le résultat pour OG
+            document.getElementById("Freemint").classList.remove("hidden");
+        }
+    })
 
     // Requête pour vérifier si le portefeuille est dans la liste OG
     axios.get(`https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}/values/${rangeOG}`, {
