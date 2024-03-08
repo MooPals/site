@@ -6,43 +6,43 @@
     "attributes": [
         {
             "trait_type": "Tiers",
-            "value": "Exclusive"
+            "value": "Unknown"
         },
         {
             "trait_type": "Background",
-            "value": "Exclusive"
+            "value": "Unknown"
         },
         {
             "trait_type": "Base",
-            "value": "Exclusive"
+            "value": "Unknown"
         },
         {
             "trait_type": "Clothing",
-            "value": "Exclusive"
+            "value": "Unknown"
         },
         {
             "trait_type": "Eyes",
-            "value": "Exclusive"
+            "value": "Unknown"
         },
         {
             "trait_type": "Eyes-wear",
-            "value": "Exclusive"
+            "value": "Unknown"
         },
         {
             "trait_type": "Mouth",
-            "value": "Exclusive"
+            "value": "Unknown"
         },
         {
             "trait_type": "Accessories",
-            "value": "Exclusive"
+            "value": "Unknown"
         },
         {
             "trait_type": "Head",
-            "value": "Exclusive"
+            "value": "Unknown"
         },
         {
             "trait_type": "Exclusive",
-            "value": "Candy Moo"
+            "value": "Unknown"
         }
     ]
 }
