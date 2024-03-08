@@ -1,0 +1,48 @@
+{
+    "name": "Unrevealed MooPals #592",
+    "description": "Loudest MOOO on AVAX",
+    "image": "https://moopals.com/assets/Curtain%20Pals.jpg",
+    "edition": "592",
+    "attributes": [
+        {
+            "trait_type": "Tiers",
+            "value": "Exclusive"
+        },
+        {
+            "trait_type": "Background",
+            "value": "Exclusive"
+        },
+        {
+            "trait_type": "Base",
+            "value": "Exclusive"
+        },
+        {
+            "trait_type": "Clothing",
+            "value": "Exclusive"
+        },
+        {
+            "trait_type": "Eyes",
+            "value": "Exclusive"
+        },
+        {
+            "trait_type": "Eyes-wear",
+            "value": "Exclusive"
+        },
+        {
+            "trait_type": "Mouth",
+            "value": "Exclusive"
+        },
+        {
+            "trait_type": "Accessories",
+            "value": "Exclusive"
+        },
+        {
+            "trait_type": "Head",
+            "value": "Exclusive"
+        },
+        {
+            "trait_type": "Exclusive",
+            "value": "Candy Moo"
+        }
+    ]
+}
