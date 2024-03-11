@@ -212,6 +212,15 @@ li.active {
 .mintProgression {
     min-width: 100px;
 }
+
+.water {
+    position: relative;
+    width: 120px;
+    height: 120px;
+}
+.mintpic {
+    display: none;
+}
 }
 
 .centered{
