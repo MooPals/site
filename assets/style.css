@@ -206,6 +206,10 @@ li.active {
     justify-content: center;
 }
 
+.mintpic {
+margin-right: -3vw;
+}
+
 @media screen and (max-width: 768px) {
 
 
