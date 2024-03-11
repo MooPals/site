@@ -212,19 +212,15 @@ margin-right: -3vw;
 
 @media screen and (max-width: 768px) {
 
+    .mintProgression {
+        min-width: 100px;
+    }
 
-.mintProgression {
-    min-width: 100px;
-}
 
-.water {
-    position: relative;
-    width: 120px;
-    height: 120px;
-}
-.mintpic {
-    display: none;
-}
+
+    .mintpic {
+        display: none;
+    }
 }
 
 .centered{
@@ -896,6 +892,22 @@ footer {
   left: 44%;
   color: #fff;
   }
+
+  @media screen and (max-width: 768px) {
+
+    .water {
+        width: 100px;
+        height: 100px;
+    }
+
+    #progression {
+        bottom: -10px;
+        left: 36%;
+    }
+
+  }
+
+
 
   
   @keyframes anim {
