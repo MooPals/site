@@ -63,86 +63,49 @@
             <div class="title">
                 <h1>MINT INFO</h1>
             </div>
-            <p>
-                You will find bellow all info available for our incoming mint.
-                The mint will occur on Rareboard launchpad.
-            </p>
-            <div class="mintAllInfo fade-in">
-                <div class="mintCalendar">
-                    <div id="OGStep" class="mintStep">
-                        <div class="mintHeader">
-                                <h2>Stage 1 - MooOG List</h2>
-                            <div class="eligibilityStatus">
-                                <p id="OGNotEligible" class="OGNotEligible hidden"><i class="fa-solid fa-circle-xmark"></i> Don't be sad, only few made it</p>
-                                <p id="OGEligible" class="OGEligible hidden"><i class="fa-solid fa-circle-check"></i> Legend!</p>
-                            </div>
-                        </div>
-                        <div>
-                            <div>
-                                <p class="mintDate"><i class="fa-solid fa-calendar-days"></i> March 8th • <i class="fa-solid fa-clock"></i> TBA </p>
-                            </div>
-                            <div>
-                                <p class="mintInfo"><i class="fa-solid fa-sack-dollar"></i> 1.6 AVAX • <i class="fa-solid fa-bag-shopping"></i> 1 max per Wallet</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div id="WLStep" class="mintStep">
-                        <div class="mintHeader">
-                            <h2>Stage 2 - MooList</h2>
-                            <div class="eligibilityStatus">
-                                <p id="WLNotEligible" class="WLNotEligible hidden"><i class="fa-solid fa-circle-xmark"></i> Sadly not eligible</p>
-                                <p id="WLEligible" class="WLEligible hidden"><i class="fa-solid fa-circle-check"></i> Moooollish!</p>
-                            </div>
-                        </div>
-                        <div>
-                            <div>
-                                <p class="mintDate"><i class="fa-solid fa-calendar-days"></i> March 8th • <i class="fa-solid fa-clock"></i> TBA </p>
-                            </div>
-                            <div>
-                                <p class="mintInfo"><i class="fa-solid fa-sack-dollar"></i> 1.8 AVAX • <i class="fa-solid fa-bag-shopping"></i> 3 max per Wallet</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="PublicStep" class="mintStep">
-                        <div class="mintHeader">
-                            <h2>Stage 3 - Public</h2>
-                            <div class="eligibilityStatus">
-                                <p id="PublicEligible" class="PublicEligible hidden"><i class="fa-solid fa-circle-check"></i> Better late than never</p>
-                            </div>
-                        </div>
-                        <div>
-                            <div>
-                                <p class="mintDate"><i class="fa-solid fa-calendar-days"></i> March 8th • <i class="fa-solid fa-clock"></i> TBA </p>
-                            </div>
-                            <div>
-                                <p class="mintInfo"><i class="fa-solid fa-sack-dollar"></i> 2.0 AVAX • <i class="fa-solid fa-bag-shopping"></i> 10 max per tx, unlimited amount</p>
-                            </div>
-                        </div>
+            <div class="content-flex-row mint-enforce-flex-row fade-in">
+                <div class="left-content">            
+                    <div class="content-image-left mintpic">
+                        <img src="assets/unrevealed_moo2.png" alt="MooPals hidding">
                     </div>
                 </div>
-                <div class="walletCheckerTool">
-                    <h2>WALLET CHECKER</h2>
-                    <label for="walletAddress">Enter your wallet address:</label>
-                    <div class="walletChecker">
-
-                        <input type="text" id="walletAddress" name="walletAddress">
-                        <button class="btn elibilitySearch" onclick="checkEligibility()"><i class="fa-solid fa-magnifying-glass"></i></button>
+                <div class="right-content-splitted fade-in">
+                    <div class="generic-content">
+                        <h2 class="centered">Join the herd!</h2>
+                        <p class="content-text-right">Dive into a world of cuteness and excitement with the MooPals collection! This collection of adorable cows charms with its irresistible design and endearing personality.</p>
+                        <p>The MooPals community is buzzing with palpable excitement for the future utilities of these unique creatures! 💡 With upcoming features and applications, MooPals promise to bring a touch of magic and fun to the Avalanche C-Chain ecosystem.</p>
+                        <p>Join us on this extraordinary adventure and explore a universe of cuteness and anticipation with the MooPals! 🐮✨</p>
                     </div>
-                    <div id="result-container">
-                        <div id="og-result" class="hidden">
-                            <p>Wallet checked: 🐮 MooOGList 🐮</p>
+                    <div class="mintAllInfo fade-in">
+                        <div class="mintCalendar ">
+                            <h2 class="centered">Mint info</h2>
+                            <div id="PublicStep" class="mintStep">
+                                <div>
+                                    <div>
+                                        <p class="mintInfo"><i class="fa-solid fa-calendar-days"></i> Live • <i class="fa-solid fa-rocket"></i> Rareboard </p>
+                                    </div>
+                                    <div>
+                                        <p class="mintInfo"><i class="fa-solid fa-sack-dollar"></i> 0.95 AVAX • <i class="fa-solid fa-bag-shopping"></i> 10 max/tx</p>
+                                    </div>
+                                    <div>
+                                        <p class="mintInfo" id="minted"></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="link-button centered">
+                                <a href="https://www.rareboard.com/moopals" class="btn" target="_blank">Mint on Rareboard</a>
+                            </div>
                         </div>
-                        <div id="wl-result" class="hidden">
-                            <p>Wallet checked: 🐮 MooList 🐮</p>
-                        </div>
-                        <div id="none-result" class="hidden">
-                            <p>Wallet checked: Public</p>
-                            <p>Reach us on <a href="https://discord.gg/Moopals" alt="Discord official link to MooPals"><i class="fa-brands fa-discord"></i></a> for any error</p>
-                        </div>
-                        <div id="Freemint" class="hidden">
-                            <p>Congratulations, you have also one freemint</p>
-                            <p>It will be airdroped on Mint day!</p>
+                        <div class="mintProgression">
+                            <h2>Mint Progression</h2>
+                            <!-- <div class="progress-container">
+                                <div class="progress-bar" id="progress-bar"></div>
+                            </div> -->
+                            <div class="water-container">
+                                <div class="water">
+                                    <p id="progression"></p>
+                                </div>     
+                            </div>             
                         </div>
                     </div>
                 </div>
@@ -219,7 +182,7 @@
 
     <script src="assets/script.js"></script>
     <script src="https://apis.google.com/js/api.js"></script>
-    <script src="assets/checkwallet.js"></script>
+    <script src="assets/progressionRate.js"></script>
 </body>
 
 </html>

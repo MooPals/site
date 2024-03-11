@@ -175,54 +175,14 @@ li.active {
     margin: 45px 0px;
 }
 
-.walletChecker {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-}
 
-.walletCheckerTool {
+.mintProgression {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    min-width: 400px;
-}
-
-#walletAddress {
-    width: 80%;
-    padding: 0.8em;
-    font-size: 1em;
-    border: 1px solid #000000;
-    border-radius: 8px 0px 0px 8px;
-    box-sizing: border-box; /* Assure que le padding ne modifie pas la largeur totale */
-    text-align: center;
-    max-width: 400px;
-}
-
-#wl-result,
-#og-result,
-#none-result, #Freemint {
-    padding: 5px;
-    border-radius: 8px;
-    margin-top: 10px;
-}
-
-#wl-result, #Freemint {
-    background-color: #84d697;
-    color: #231F13;
-}
-
-#og-result {
-    background-color: #b2a2c9;
-    color: #FFFFFF;
-}
-
-#none-result {
-    background-color: pink;
-    color: #231F13;
+    min-width: 330px;
 }
 
 .mintStep {
@@ -233,14 +193,29 @@ li.active {
     border-radius: 5px;
     border:#EBC392 2px solid;
     background-color: #EBC392;
-}
+    min-width: 260px;
+    max-width: 370px;
+    margin: auto;}
 
 .mintAllInfo{
+    margin-top: 20px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    align-items: center;
+    align-items: start;
     justify-content: center;
+}
+
+@media screen and (max-width: 768px) {
+
+
+.mintProgression {
+    min-width: 100px;
+}
+}
+
+.centered{
+    text-align: center;
 }
 
 .mintCalendar{
@@ -249,38 +224,13 @@ li.active {
     flex-wrap: wrap;
     gap: 5px;
     width: 35%;
+    min-width: 330px;
 }
 
 .mintHeader {
     display: flex;
     flex-direction: column;
     gap: 5px;
-}
-
-.OGNotEligible, .WLNotEligible {
-    color: darkred;
-    margin: 0px;
-}
-
-.OGEligible, .WLEligible, .PublicEligible {
-    color: darkgreen;
-    margin: 0px;
-}
-
-.checkred {
-    background-color: pink;
-    border: darkred 2px solid;
-    box-shadow: 0 0 5px 0 darkred;
-}
-
-.checkgreen {
-    background-color: #84d697;
-    border: darkgreen 2px solid;
-    box-shadow: 0 0 5px 0 darkgreen;
-}
-
-.eligibilityStatus {
-    margin: -5px;
 }
 
 
@@ -888,6 +838,63 @@ footer {
   }
 }
 
+/* Progression rate */
+:root {
+    --progress: 0; /* Valeur par défaut, sera remplacée dynamiquement */
+  }
+  
+  .water {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    background-color: #EBC392;
+    box-shadow: inset 0 0 50px #cb8d40;
+    clip-path: polygon(0 0, 100% 0, 85% 100%, 15% 100%);
+  }
+  
+  .water::before {
+    content: "";
+    width: 200%;
+    height: 200%;
+    background-color: #ececec;
+    position: absolute;
+    top: calc(var(--progress)); /* Utilisation de la variable --progress */
+    left: -50%;
+    border-radius: 40%;
+    animation: anim 12s linear infinite;
+  }
+  
+  .water::after {
+    content: "";
+    width: 204%;
+    height: 204%;
+    background-color: #ececec80;
+    position: absolute;
+    top: calc(var(--progress)); /* Utilisation de la variable --progress */
+    left: -52%;
+    border-radius: 40%;
+    animation: anim 12s linear infinite;
+    animation-delay: 0.5s;
+  }
+
+  #progression {
+  position: absolute;
+  bottom: 0px;
+  left: 44%;
+  color: #fff;
+  }
+
+  
+  @keyframes anim {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+
 /* MtPelerin style */
 
 .mtpelerin-iframe {
@@ -1080,6 +1087,11 @@ footer {
     .content-flex-row {
         display: flex;
         flex-direction: column;
+    }
+
+    .mint-enforce-flex-row {
+        display: flex;
+        flex-direction: row;
     }
 
     .right-content-splitted{
